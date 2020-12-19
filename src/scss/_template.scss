@@ -1,0 +1,31 @@
+/*styling*/
+
+html{
+    height:100vh;
+    overflow-x:hidden;
+}
+
+body{
+    font:normal 100%/1.4 Avenir, sans-serif;
+    min-height:100vh;
+    margin:0;
+    padding:0;
+    @include flex(column, space-between, stretch);
+}
+
+header{
+    background-color:#777;
+    height:120px;
+    @include flex(row, center, center);
+}
+
+main{
+    flex-grow:1;
+}
+
+footer{
+    background-color:#444;
+    height:80px;
+    text-align:center;
+    padding:2em;
+}

@@ -1,0 +1,21 @@
+/* MIXINS */
+
+@mixin fonts($fontfamily: $hoofdfont, $fontsize: 100%, $fontweight: 400, $fontstyle:normal, $lineheight:1.5, $textalign: left, $texttransform){
+    font: {
+        family: $fontfamily;
+        size: $fontsize;
+        weight: $fontweight;
+        style: $fontstyle;
+    }
+    line-height: $lineheight;
+    text-align: $textalign;
+    text-transform: $texttransform;
+}
+
+@mixin flex($direction, $justify-content, $align-items){
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify-content;
+    align-items: $align-items;
+}
+

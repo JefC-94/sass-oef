@@ -1,22 +1,8 @@
 @import '_var';
+@import '_mixins';
 @import '_reset';
+@import '_template';
 
-body{
-    margin:2em;
-    padding:0;
-    background: #eee;
-
-    h1{
-        font-size:18px;
-    }
-
-    ul{
-        display:flex;
-        justify-content:center;
-        list-style-type:none;
-
-        li{
-            color:$hoofdkleur;
-        }
-    }
+p#title{
+    font-size:22px;
 }
