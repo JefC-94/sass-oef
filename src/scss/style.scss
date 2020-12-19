@@ -1,15 +1,22 @@
+@import '_var';
+@import '_reset';
+
 body{
-    margin:0;
+    margin:2em;
     padding:0;
-    background: #ddd;
+    background: #eee;
 
     h1{
         font-size:18px;
     }
 
     ul{
+        display:flex;
+        justify-content:center;
+        list-style-type:none;
+
         li{
-            color:white;
+            color:$hoofdkleur;
         }
     }
 }

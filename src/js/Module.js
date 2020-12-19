@@ -1,3 +1,9 @@
-const module = [1,2,3];
+class Module{
 
-export default module;
+    constructor(title){
+        this.title = title;
+    }
+
+}
+
+export default Module;

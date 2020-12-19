@@ -1,3 +1,3 @@
-import module from "module";
+import Module from './Module';
 
 console.log("test");
