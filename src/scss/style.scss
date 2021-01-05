@@ -1,8 +1,155 @@
-@import '_var';
-@import '_mixins';
-@import '_reset';
+@use '_var' as *;
+@use '_mixins' as *;
+@use '_reset' as *;
 @import '_template';
+
+html{
+    min-height:100%;
+    position:relative;
+}
+
+body{
+    min-height:100%;
+    margin:0;
+    background: rgb(182,6,209);
+    background: linear-gradient(148deg, rgba(182,6,209,1) 9%, rgba(38,147,240,1) 91%);
+    background-repeat:no-repeat;
+    background-attachment: fixed;
+    background-size:cover;
+    color:$hoofdkleur;
+}
 
 p#title{
     font-size:22px;
+    font-weight:800;
+    color:$hoofdkleur;
+}
+
+.todoApp{
+    width:500px;
+    margin:0 auto;
+    padding:1em 0;
+    @include flex(column, flex-start, center);
+
+    &__form{
+        display:block;
+        @include flex(row, flex-start, center);
+        
+        &__input{
+            height:50px;
+            width:200px;
+            border:3px solid $hoofdkleur;
+            background:none;
+            border-radius:10px;
+            color:white;
+            font-size:20px;
+            padding-left:10px;
+            outline:none;
+
+            &::placeholder{
+                color:rgba(255,255,255,0.4);
+            }
+
+            &:focus{
+                background:rgba(200,200,200, 0.2);
+            }
+
+            &--error{
+                border-color:rgba(145, 1, 1, 0.9);
+            }
+        }
+
+        &__submit{
+            margin-left:1rem;
+            height:50px;
+            width:50px;
+            background:$hoofdkleur;
+            color:$accentkleur;
+            font-size:30px;
+            line-height:30px;
+            border:none;
+            outline:none;
+            cursor:pointer;
+            border-radius:10px;
+            text-transform:uppercase;
+            transition:background .3s ease;
+
+            &:hover{
+                background:rgba(255,255,255,0.6);
+            }
+        }
+    }
+
+    &__list{
+        margin-top:3em;
+        padding-left:0;
+        align-self:flex-start;
+        list-style-type:none;
+        width:100%;
+
+        &__item{
+            width:inherit;
+            padding:1em 2em;
+            margin:0.7em;
+            background:$hoofdkleur;
+            color:$accentkleur;
+            font-weight:600;
+            border-radius:10px;
+            @include flex(row, space-between, center);
+            
+            &:not(:first-of-type){
+                border-top:1px solid $hoofdkleur;
+            }
+            
+            &--checked{
+                text-decoration:line-through;
+            }
+
+            &__actions{
+                @include flex(row, space-between, center);
+
+                a{
+                    margin-left:.5em;
+                    display:inline-block;
+                    height:30px;
+                    width:30px;
+                    background:$accentkleur-2;
+                    border-radius:50%;
+                    color:$hoofdkleur;
+                    transition:background .3s ease;
+
+                    .icon{
+                        font-size:14px;
+                        margin:4px;
+                        pointer-events: none;
+
+                        svg{
+                            pointer-events: none;
+                        }
+                    }
+
+                    &:hover{
+                        background:$accentkleur-2d;
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+@media screen and (max-width:600px){
+
+    .todoApp{
+        width:90%;
+        
+        &__list{
+            width:100%;
+
+            &__item{
+                margin:.7em 0;
+            }
+        }
+    }
+
 }

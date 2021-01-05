@@ -1,3 +1,4 @@
-import Module from './Module';
+import startData from './startData';
+import Todo from './Todo';
 
-console.log("test");
+new Todo(document.querySelector('#todoApp-container'), startData);

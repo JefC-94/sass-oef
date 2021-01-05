@@ -14,8 +14,8 @@ body{
 }
 
 header{
-    background-color:#777;
-    height:120px;
+    //background-color:#777;
+    height:100px;
     @include flex(row, center, center);
 }
 
@@ -24,7 +24,7 @@ main{
 }
 
 footer{
-    background-color:#444;
+    //background-color:#444;
     height:80px;
     text-align:center;
     padding:2em;
